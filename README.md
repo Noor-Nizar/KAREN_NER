@@ -5,14 +5,7 @@ This challenge was part of my internship at KeemetAI. The project description ca
 ## Challenge Overview
 
 The goal is to capture the following entities in both Arabic and English languages:
-- Dates
-- Times
-- Measurement Units
-- Quantity
-- Colors
-- Currency
-- Age
-- Prices
+- Dates - Times - Measurement Units - Quantity - Colors - Currency - Age - Prices
 
 Existing NER models, such as [marefa-nlp/marefa-ner](https://huggingface.co/marefa-nlp/marefa-ner) (1) and [hatmimoha/arabic-ner](https://huggingface.co/hatmimoha/arabic-ner) (2), do not capture all the required entities. Additionally, the data they were trained on is unavailable, making fine-tuning challenging.
 
