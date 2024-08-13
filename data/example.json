@@ -1,0 +1,38 @@
+Visually inspecting the Export Format of LabelBox
+
+{
+    "data_row": {
+        "id": "clzof59fc17vq0708haygjovz", "external_id": "sentence_1.txt", "row_data": "https://storage.labelbox.com/clzo9sqpa0e6s072tadl2ef25%2F314fc988-36d0-dafb-1a43-e5fa34aeb98e-sentence_1.txt?Expires=1723402418573&KeyName=labelbox-assets-key-3&Signature=UuE-82E0uatmq5PaS_B_ml578oc"
+    }, 
+    "media_attributes": {
+        "asset_type": "text", "mime_type": "text/plain"
+    }, 
+    "projects": {
+        "clzoe997o0p9q071hdqdm5f51": {
+            "name": "Keemet", 
+            "labels": [
+                {"label_kind": "Default", "version": "1.0.0", "id": "clzof8ah00rjc07xn7t4569gv", 
+                "annotations": {"objects": [{"feature_id": "clzofn9z70k1b070g4i4ga8u0", "feature_schema_id": "clzofajwn0pg3071h8f0zc526", "name": "Dates", "value": "dates", "annotation_kind": "TextEntity", "classifications": [], "location": {"start": 38, "end": 45}},
+                    {"feature_id": "clzofn9z80k1c070g32ea7fq5", "feature_schema_id": "clzofajwo0pg5071hbb6ph3j9", "name": "Times", "value": "times", "annotation_kind": "TextEntity", "classifications": [], "location": {"start": 29, "end": 36}}], "classifications": [], "relationships": []}}], "project_tags": []}}}
+
+
+{
+    "data_row": {"id": "clzof59fc17vx07083yflu0fj", "external_id": "sentence_8.txt", "row_data": "https://storage.labelbox.com/clzo9sqpa0e6s072tadl2ef25%2F8dd9c73f-bb7e-63bb-fab2-df1c0e6234dc-sentence_8.txt?Expires=1723402418583&KeyName=labelbox-assets-key-3&Signature=qqrOV0SwrPSCIWgVVOICKSBH3iw"}, 
+    "media_attributes": {"asset_type": "text", "mime_type": "text/plain"}, 
+    "projects": {"clzoe997o0p9q071hdqdm5f51": {"name": "Keemet", 
+        "labels": [
+            {"label_kind": "Default", "version": "1.0.0", "id": "clzofwywb00xv07hx4mt0gykw", 
+            "annotations": {"objects": 
+            [
+                {"feature_id": "clzofwz4500yr07iu6n4oc1ua", "feature_schema_id": "clzofajwo0pg7071hh1xc4rd3", "name": "Units", "value": "units", "annotation_kind": "TextEntity", "classifications": [], "location": {"start": 9, "end": 13}}, 
+                {"feature_id": "clzofwz4500ys07iu7u027p7h", "feature_schema_id": "clzofajwo0pg7071hh1xc4rd3", "name": "Units", "value": "units", "annotation_kind": "TextEntity", "classifications": [], "location": {"start": 21, "end": 27}},
+                {"feature_id": "clzofwz4500yt07iudstfa1u7", "feature_schema_id": "clzofajwo0pg9071h8ens96s5", "name": "Quantity", "value": "quantity", "annotation_kind": "TextEntity", "classifications": [], "location": {"start": 7, "end": 7}},
+                {"feature_id": "clzofwz4500yu07iu33m6byc6", "feature_schema_id": "clzofajwo0pg9071h8ens96s5", "name": "Quantity", "value": "quantity", "annotation_kind": "TextEntity", "classifications": [], "location": {"start": 18, "end": 19}}
+            ],
+            "classifications": [], "relationships": []}}], "project_tags": []}
+    }
+}
+
+
+{"data_row": {"id": "clzof59fc17vu0708me44u7nt", "external_id": "sentence_5.txt", "row_data": "https://storage.labelbox.com/clzo9sqpa0e6s072tadl2ef25%2F268e5960-13ce-f2ee-e5b7-5750779ce954-sentence_5.txt?Expires=1723402418578&KeyName=labelbox-assets-key-3&Signature=DiPnxx7naLcUaqFrEDhtQxQEV6g"}, "media_attributes": {"asset_type": "text", "mime_type": "text/plain"}, "projects": {"clzoe997o0p9q071hdqdm5f51": {"name": "Keemet", "labels": [{"label_kind": "Default", "version": "1.0.0", "id": "clzofwgof014707gm2qazb36f", 
+"annotations": {"objects": [{"feature_id": "clzofwhwx00va07gv2uld360r", "feature_schema_id": "clzofajwn0pg3071h8f0zc526", "name": "Dates", "value": "dates", "annotation_kind": "TextEntity", "classifications": [], "location": {"start": 25, "end": 41}}], "classifications": [], "relationships": []}}], "project_tags": []}}}

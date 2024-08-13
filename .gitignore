@@ -1,4 +1,4 @@
-/data/
+/data/sentences/*.txt
 /models/
 *.pyc*
 *.logs
