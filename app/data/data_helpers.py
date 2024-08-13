@@ -1,7 +1,7 @@
 from app.logger import logger
 from typing import List
 
-def load_data(file_path):
+def load_data(file_path : str) -> tuple:
     '''loades preprocessed data in format of word entity mapping'''
     with open(file_path, 'r', encoding='utf-8') as file:
         data = file.read().split('\n\n')  # Split sentences
@@ -20,7 +20,7 @@ def load_data(file_path):
         labels.append(tags)
     return sentences, labels
 
-def tokenize_and_align_labels(sentences, labels, tokenizer, max_length:int=None):
+def tokenize_and_align_labels(sentences : List, labels : List, tokenizer, max_length:int=None):
     '''
     Because the tokenization may split the words into subwords we need to align the labels with the tokenized inputs.
     This function tokenizes the input sentences and aligns the labels with the tokenized inputs.
@@ -64,7 +64,7 @@ def tokenize_and_align_labels(sentences, labels, tokenizer, max_length:int=None)
 
     return tokenized_inputs, tokenized_labels
 
-def create_label_mappings(labels):
+def create_label_mappings(labels : List) -> tuple:
     '''
     creates label to id and id to label mappings
     '''
@@ -74,5 +74,5 @@ def create_label_mappings(labels):
     id_to_label = {i: label for label, i in label_to_id.items()}
     return label_to_id, id_to_label
 
-def convert_labels_to_ids(labels, label_to_id):
+def convert_labels_to_ids(labels : List, label_to_id : dict) -> list:
     return [[label_to_id.get(label, -100) for label in sublist] for sublist in labels]

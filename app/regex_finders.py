@@ -158,7 +158,7 @@ def regex_ar_units(text):
 
 
 
-def regex_ner(text):
+def regex_ner(text:str)->dict:
     all_matches = {}
     
     # Collect matches from all regex functions

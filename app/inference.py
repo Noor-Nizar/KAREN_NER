@@ -1,19 +1,21 @@
 import torch
+from typing import List
+
 from torch.utils.data import DataLoader
 
 from app.datasets import InferenceDataset
 from app.regex_finders import regex_ner
 
-def get_labels_tuned():
+def get_labels_tuned() -> dict:
     # FIXME : update this automatically
     return {0: 'B-Age', 1: 'B-Colors', 2: 'B-Currency', 3: 'B-Dates', 4: 'B-Prices', 5: 'B-Quantity', 6: 'B-Times', 7: 'B-Units', 8: 'I-Age', 9: 'I-Currency', 10: 'I-Dates', 11: 'I-Prices', 12: 'I-Quantity', 13: 'I-Times', 14: 'I-Units', 15: 'O'}
 
-def get_labels_main():
+def get_labels_main() -> dict:
     ''' Returns the labels for inference '''
     custom_labels = {0: 'O', 1: 'B-job', 2: 'I-job', 3: 'B-nationality', 4: 'B-person', 5: 'I-person', 6: 'B-location', 7: 'B-time', 8: 'I-time', 9: 'B-event', 10: 'I-event', 11: 'B-organization', 12: 'I-organization', 13: 'I-location', 14: 'I-nationality', 15: 'B-product', 16: 'I-product', 17: 'B-artwork', 18: 'I-artwork'}
     return custom_labels
 
-def predict(texts, model, tokenizer, batch_size=8, max_len=64):
+def predict(texts : List, model, tokenizer, batch_size=8, max_len=64) -> tuple:
     # Prepare the dataset and dataloader
     dataset = InferenceDataset(texts, tokenizer, max_len)
     dataloader = DataLoader(dataset, batch_size=batch_size)
@@ -42,7 +44,7 @@ def predict(texts, model, tokenizer, batch_size=8, max_len=64):
 
     return predictions, probs
 
-def extract_entities_from_texts(texts, tokenized_inputs, predictions_decoded):
+def extract_entities_from_texts(texts : List, tokenized_inputs : dict, predictions_decoded : List) -> List:
     ''' maps the prediction from token level to character level, groups the same entities and returns the expected dictionary'''
     entity_list = []
 
@@ -100,11 +102,8 @@ def extract_entities_from_texts(texts, tokenized_inputs, predictions_decoded):
 
     return entity_list
 
-
-
-def infer_main(texts, model, tokenizer, max_length=64):
+def infer_model(texts: List, model, tokenizer, custom_labels : dict, max_length=64):
     ''' Returns the entities for the given texts '''
-    custom_labels = get_labels_main()
     predictions, probs = predict(texts, model, tokenizer) # TODO: Handle probs
     tokenized_input = tokenizer(texts, 
                             is_split_into_words=False, 
@@ -118,28 +117,13 @@ def infer_main(texts, model, tokenizer, max_length=64):
 
     entities = extract_entities_from_texts(texts, [tokenized_input], predictions_decoded)
     return entities
-
-def infer_tuned(texts, model, tokenizer, max_length=64):
-    ''' Returns the entities for the given texts '''
-    custom_labels = get_labels_tuned()
-    predictions, probs = predict(texts, model, tokenizer) # TODO: Handle probs
-    tokenized_input = tokenizer(texts, 
-                            is_split_into_words=False, 
-                            padding='max_length', 
-                            max_length=64, 
-                            truncation=True,
-                            return_tensors='pt',
-                            return_offsets_mapping=True)
-    
-    predictions_decoded = [[custom_labels.get(pred, "O") for pred in prediction] for prediction in predictions]
-
-    entities = extract_entities_from_texts(texts, [tokenized_input], predictions_decoded)
-    return entities
-
 
 def infer(texts, model_main, tokenizer_main, model_tuned, tokenizer_tuned, max_length=64):
     ''' Returns the entities for the given texts '''
-    output_main = infer_main(texts, model_main, tokenizer_main, max_length)
-    output_tuned = infer_tuned(texts, model_tuned, tokenizer_tuned, max_length)
+    labels_main = get_labels_main()
+    labels_tuned = get_labels_tuned()
+
+    output_main = infer_model(texts, model_main, tokenizer_main, labels_main, max_length)
+    output_tuned = infer_model(texts, model_tuned, tokenizer_tuned, labels_tuned, max_length)
     output_regex = [regex_ner(text) for text in texts]
     return {"main": output_main, "tuned": output_tuned, "regex": output_regex}

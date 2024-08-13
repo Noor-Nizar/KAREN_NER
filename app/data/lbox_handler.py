@@ -4,7 +4,7 @@ import os
 from app.logger import logger
 
 
-def process_labelbox_data(project_id: str = '1'):
+def process_labelbox_data(project_id: str = '1') -> None:
     '''
     Looks for exported annotations at data/FineTune.ndjson
     and the original samples in the format of .txt file / row  at data/sentences/ 
