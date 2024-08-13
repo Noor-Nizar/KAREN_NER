@@ -1,0 +1,7 @@
+/data/
+/models/
+*.pyc*
+*.logs
+*.zip
+logs/
+.bin
