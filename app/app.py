@@ -3,9 +3,6 @@ from fastapi.responses import JSONResponse
 from typing import List, Optional, Dict
 from pydantic import BaseModel, Field
 
-import os 
-os.chdir('..')
-
 app = FastAPI()
 
 # --- Load the model and tokenizer ---
