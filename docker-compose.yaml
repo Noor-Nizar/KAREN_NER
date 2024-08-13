@@ -1,0 +1,9 @@
+services:
+  api:
+    image: enar_ner:latest
+    ports:
+      - "8008:8008"
+    volumes:
+      - type: bind
+        source: shared
+        target: /app/shared
