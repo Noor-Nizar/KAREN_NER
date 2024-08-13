@@ -32,6 +32,9 @@ def predict_endpoint(request: PredictionRequest):
     output = infer(request.texts, model_main, tokenizer_main, model_tuned, tokenizer_tuned)
     return JSONResponse(content=output)
 
+### Training EndPoint ? Decided Against it since I feel thatthe annotation process
+### in this task specifically is too tedious to realistically expect a client to add data continously 
+
 # --- Health Check ---
 @app.get("/health")
 def health_check():

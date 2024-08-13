@@ -33,7 +33,7 @@ def prepare_data(tokenizer, re_process=False, train_size=128):
     return train_dataset, test_dataset, label_to_id, id_to_label
 
 def get_trainer(model, train_dataset, test_dataset, cuda=True, batch_size=16, compute_metrics=compute_metrics):
-    if not cuda: ## incase of running on mac it defaults on mps
+    if not cuda: ## incase of running on mac it defaults on mps which is problematic -> set to cpu
         model = model.to('cpu')
 
     training_args = TrainingArguments(

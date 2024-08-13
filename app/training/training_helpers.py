@@ -13,7 +13,6 @@ def compute_metrics(p: EvalPrediction):
     
     report = classification_report(true_labels, pred_labels, labels=list(get_labels_tuned().keys()), target_names=list(get_labels_tuned().values()), output_dict=True, zero_division=0)
     
-    # Return the metrics of interest
     return {
         'precision': report['macro avg']['precision'],
         'recall': report['macro avg']['recall'],
@@ -21,6 +20,7 @@ def compute_metrics(p: EvalPrediction):
     }
 
 def compute_metrics_2(p: EvalPrediction):
+    '''Will use this after training, during final evaluation, generating a detailed confusion matrix'''
     predictions, labels = p.predictions, p.label_ids
     predictions = predictions.argmax(axis=-1)
     
@@ -31,5 +31,4 @@ def compute_metrics_2(p: EvalPrediction):
     report = classification_report(true_labels, pred_labels, labels=list(get_labels_tuned().keys()), target_names=list(get_labels_tuned().values()), output_dict=False, zero_division=0)
     
     print(report)
-    # Return the metrics of interest
     return {"done": 1}

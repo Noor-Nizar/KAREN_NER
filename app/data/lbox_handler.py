@@ -11,7 +11,6 @@ def process_labelbox_data(project_id: str = '1'):
     and writes the processed data to data/processed_data.txt which is a word entity mapping txt file
     '''
 
-    # File paths
     labelbox_file = 'data/box_annots.ndjson'
     sentences_dir = 'data/sentences/'
     output_file = 'data/processed.txt'
@@ -55,11 +54,11 @@ def process_labelbox_data(project_id: str = '1'):
                 # Move to the next word
                 current_char_idx += len(word) + 1  # +1 for the space
             
-            # Create the final output for this sentence
+            # final output for this sentence
             for word, annotation in zip(words, word_annotations):
                 output_lines.append(f"{word}\t{annotation}")
             
-            # Add a blank line to separate examples in the output file
+            # blank line to separate examples in the output file
             output_lines.append("")
     
     # Write all processed data to the output file

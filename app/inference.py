@@ -2,7 +2,6 @@ import torch
 from torch.utils.data import DataLoader
 
 from app.datasets import InferenceDataset
-from app.data.data_helpers import decode_and_align_labels, decode_and_align_labels_main
 from app.regex_finders import regex_ner
 
 def get_labels_tuned():
@@ -44,6 +43,7 @@ def predict(texts, model, tokenizer, batch_size=8, max_len=64):
     return predictions, probs
 
 def extract_entities_from_texts(texts, tokenized_inputs, predictions_decoded):
+    ''' maps the prediction from token level to character level, groups the same entities and returns the expected dictionary'''
     entity_list = []
 
     for text, tokenized_input, predictions in zip(texts, tokenized_inputs, predictions_decoded):
@@ -78,7 +78,7 @@ def extract_entities_from_texts(texts, tokenized_inputs, predictions_decoded):
                     current_entity = entity_label
                     current_start = start
             elif current_entity is not None:
-                # Store the previous entity when prediction is "O"
+                # store previous entity if current is "O"
                 entities.append({
                     "entity": text[current_start:start],
                     "start_idx": current_start,
@@ -87,7 +87,7 @@ def extract_entities_from_texts(texts, tokenized_inputs, predictions_decoded):
                 })
                 current_entity = None
 
-        # Handle any lingering entity
+        # Handle remaining entity
         if current_entity is not None:
             entities.append({
                 "entity": text[current_start:end],

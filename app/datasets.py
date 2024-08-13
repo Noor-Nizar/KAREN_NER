@@ -2,6 +2,7 @@ from torch.utils.data import Dataset
 import torch
 
 class TokenizedDataset(Dataset):
+    '''used in the training pipeline'''
     def __init__(self, X_tokenized, y_labels):
         self.input_ids = [item['input_ids'].squeeze(0) for item in X_tokenized]
         self.token_type_ids = [item['token_type_ids'].squeeze(0) for item in X_tokenized]
@@ -20,6 +21,7 @@ class TokenizedDataset(Dataset):
         }
     
 class InferenceDataset(Dataset):
+    '''used in the inference pipeline'''
     def __init__(self, texts, tokenizer, max_len=64):
         self.texts = texts
         self.tokenizer = tokenizer
