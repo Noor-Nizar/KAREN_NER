@@ -43,11 +43,6 @@ Existing NER models, such as [marefa-nlp/marefa-ner](https://huggingface.co/mare
 2. Run the container.
 3. Check `examples.ipynb` for examples on how to use the API.
 
-**Expected Input Shape**: 
-```json
-{"texts": ["string1", "string2"]}
-```
-Returns: Dictionary with outputs from each approach.
 
 ### Training
 
