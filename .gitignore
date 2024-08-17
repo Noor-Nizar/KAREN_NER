@@ -1,8 +1,8 @@
 /data/sentences/*.txt
-/models/
 *.pyc*
 *.logs
 *.zip
 logs/
 .bin
 extra.ipynb
+models/*

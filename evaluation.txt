@@ -1,0 +1,81 @@
+## Train on Generated Data Evaluate on Manually Annotated Data
+
+Training  : 50	TLOSS : 0.003300	ELOSS : 1.176571
+Evaluation :
+        precision    recall  f1-score   support
+
+       B-Age       1.00      0.05      0.09        22
+    B-Colors       1.00      0.65      0.79        26
+  B-Currency       0.00      0.00      0.00         4
+     B-Dates       0.55      0.63      0.59        35
+    B-Prices       0.91      0.41      0.57        75
+  B-Quantity       0.64      0.97      0.77       140
+     B-Times       0.88      0.88      0.88        42
+     B-Units       0.61      0.99      0.75       118
+       I-Age       1.00      0.04      0.08        77
+     I-Dates       0.86      0.83      0.84       110
+    I-Prices       0.95      0.18      0.30       213
+  I-Quantity       0.61      0.78      0.68        36
+     I-Times       0.95      0.74      0.83       152
+     I-Units       0.65      0.86      0.74       269
+           O       0.91      0.97      0.94      1632
+
+    accuracy                           0.83      2951
+   macro avg       0.77      0.60      0.59      2951
+weighted avg       0.86      0.83      0.80      2951
+
+
+## Combine Generated Data with Manually Annotated Data then Train and Evaluate on the Combined Data
+Training  : 50	TLOSS : 0.002400    ELOSS:	0.32945
+ precision    recall  f1-score   support
+
+       B-Age       1.00      1.00      1.00         7
+    B-Colors       1.00      1.00      1.00         5
+  B-Currency       0.00      0.00      0.00         2
+     B-Dates       0.50      0.55      0.52        29
+    B-Prices       0.91      0.91      0.91        23
+  B-Quantity       0.92      0.96      0.94        69
+     B-Times       0.89      0.85      0.87        20
+     B-Units       0.91      0.96      0.94        53
+       I-Age       1.00      1.00      1.00        22
+    I-Colors       0.00      0.00      0.00         1
+  I-Currency       0.00      0.00      0.00         1
+     I-Dates       0.86      0.75      0.80        72
+    I-Prices       0.92      0.93      0.92        58
+  I-Quantity       1.00      0.76      0.86        25
+     I-Times       0.93      0.91      0.92        69
+     I-Units       0.87      0.91      0.89       113
+           O       0.98      0.98      0.98      1566
+
+    accuracy                           0.95      2135
+   macro avg       0.75      0.73      0.74      2135
+weighted avg       0.95      0.95      0.95      2135
+
+## Augment with more generated data specifically for the bad performing Entities Age and Currency
+50	TLOSS : 0.001900 ELOSS : 0.338562
+ precision    recall  f1-score   support
+
+       B-Age       0.93      1.00      0.96        13
+    B-Colors       0.89      0.89      0.89         9
+  B-Currency       1.00      0.33      0.50         9
+     B-Dates       0.75      0.66      0.70        32
+    B-Prices       0.85      0.97      0.91        30
+  B-Quantity       0.93      0.88      0.90        90
+     B-Times       0.94      0.77      0.85        22
+     B-Units       0.89      0.92      0.90        59
+       I-Age       0.89      0.94      0.92        35
+    I-Colors       0.00      0.00      0.00         1 ## Very rare instances -> Bad performance, since we saving on Macro F1, it brings the score down 
+  I-Currency       1.00      0.56      0.71         9
+     I-Dates       0.84      0.84      0.84        69
+    I-Prices       0.81      0.91      0.85        74
+  I-Quantity       0.93      0.68      0.79        38
+     I-Times       0.97      0.90      0.93        69
+     I-Units       0.87      0.90      0.89       120
+           O       0.97      0.98      0.98      2001
+
+    accuracy                           0.95      2680
+   macro avg       0.85      0.77      0.80      2680
+weighted avg       0.95      0.95      0.95      2680
+
+## Generally Good Results
+

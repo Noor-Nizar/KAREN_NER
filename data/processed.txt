@@ -52,7 +52,7 @@ The	O
 ticket	O
 costs	O
 20	B-Prices
-dollars.	B-Currency
+dollars.	I-Prices
 
 He	O
 ran	O
@@ -89,7 +89,7 @@ weeks.	B-Units
 She	O
 paid	O
 30	B-Prices
-euros	B-Currency
+euros	I-Prices
 for	O
 the	O
 shoes.	O
@@ -176,7 +176,7 @@ The	O
 car	O
 costs	O
 15,000	B-Prices
-dollars.	B-Currency
+dollars.	I-Prices
 
 She	O
 walked	O
@@ -221,7 +221,7 @@ Celsius.	I-Units
 Her	O
 salary	O
 is	O
-3,000	O
+3,000	B-Quantity
 euros	B-Currency
 per	O
 month.	O
@@ -246,7 +246,7 @@ The	O
 shirt	O
 costs	O
 25	B-Prices
-pounds.	B-Currency
+pounds.	I-Prices
 
 She	O
 ran	O
@@ -260,7 +260,7 @@ The	O
 document	O
 is	O
 15	B-Quantity
-pages	I-Quantity
+pages	B-Units
 long.	O
 
 The	O
@@ -288,8 +288,8 @@ The	O
 bus	O
 ticket	O
 is	O
-3.5	B-Quantity
-euros.	B-Currency
+3.5	B-Prices
+euros.	I-Prices
 
 The	O
 product	O
@@ -311,8 +311,8 @@ days.	I-Dates
 
 He	O
 paid	O
-40	O
-dollars	B-Currency
+40	B-Prices
+dollars	I-Prices
 for	O
 the	O
 jacket.	O
@@ -327,7 +327,7 @@ long.	O
 The	O
 bottle	O
 contains	O
-1	O
+1	B-Quantity
 liter	B-Units
 of	O
 water.	O
@@ -342,11 +342,11 @@ The	O
 flight	O
 duration	O
 is	O
-3	B-Times
-hours	I-Times
+3	B-Quantity
+hours	B-Units
 and	O
-45	B-Times
-minutes.	I-Times
+45	B-Quantity
+minutes.	B-Units
 
 The	O
 car	O
@@ -359,8 +359,8 @@ white.	B-Colors
 
 He	O
 spent	O
-200	B-Quantity
-euros	B-Currency
+200	B-Prices
+euros	I-Prices
 on	O
 the	O
 vacation.	O
@@ -439,8 +439,8 @@ vacation.	O
 أسبوعين.	I-Dates
 
 دفعت	O
-30	O
-يورو	B-Currency
+30	B-Prices
+يورو	I-Prices
 مقابل	O
 الأحذية.	O
 
@@ -553,8 +553,8 @@ vacation.	O
 مئوية.	I-Units
 
 راتبها	O
-3000	B-Prices
-يورو	I-Prices
+3000	B-Quantity
+يورو	B-Currency
 في	O
 الشهر.	O
 
@@ -574,13 +574,13 @@ vacation.	O
 تكلفة	O
 القميص	O
 25	B-Prices
-جنيهًا.	B-Currency
+جنيهًا.	I-Prices
 
 ركضت	O
 10	B-Quantity
 أميال	B-Units
 في	O
-ساعة.	B-Units
+ساعة.	B-Quantity
 
 الوثيقة	O
 طولها	O
@@ -601,7 +601,7 @@ vacation.	O
 الكعك	O
 إلى	O
 200	B-Quantity
-جرام	B-Units
+جرام	I-Quantity
 من	O
 السكر.	O
 
@@ -622,12 +622,12 @@ vacation.	O
 يستحق	O
 في	O
 غضون	O
-10	B-Dates
-أيام.	I-Dates
+10	B-Quantity
+أيام.	B-Units
 
 دفع	O
 40	B-Prices
-دولارًا	B-Currency
+دولارًا	I-Prices
 للسترة.	O
 
 طول	O
@@ -649,11 +649,11 @@ vacation.	O
 
 مدة	O
 الرحلة	O
-3	B-Times
-ساعات	I-Times
+3	B-Quantity
+ساعات	B-Units
 و	O
-45	B-Times
-دقيقة.	I-Times
+45	B-Quantity
+دقيقة.	B-Units
 
 السيارة	O
 متوفرة	O
@@ -662,8 +662,8 @@ vacation.	O
 والأبيض.	O
 
 أنفق	O
-200	O
-يورو	B-Currency
+200	B-Prices
+يورو	I-Prices
 على	O
 العطلة.	O
 
@@ -683,7 +683,7 @@ the	O
 entry	O
 fee	O
 is	O
-$150.	B-Currency
+$150.	B-Prices
 
 She	O
 purchased	O
@@ -696,7 +696,7 @@ kilograms	B-Units
 of	O
 flour	O
 for	O
-$10.	B-Currency
+$10.	B-Prices
 
 The	O
 rent	O
@@ -706,7 +706,7 @@ his	O
 apartment	O
 is	O
 1,200	B-Prices
-euros	B-Currency
+euros	I-Prices
 per	O
 month.	O
 
@@ -762,7 +762,7 @@ participation	O
 fee	O
 is	O
 50	B-Prices
-dollars.	B-Currency
+dollars.	I-Prices
 
 She	O
 bought	O
@@ -794,19 +794,19 @@ a	O
 budget	O
 of	O
 500	B-Prices
-dollars.	B-Currency
+dollars.	I-Prices
 
 He	O
 spent	O
 70	B-Prices
-dollars	B-Currency
+dollars	I-Prices
 on	O
 a	O
 blue	B-Colors
 jacket	O
 and	O
 40	B-Prices
-dollars	B-Currency
+dollars	I-Prices
 on	O
 a	O
 pair	O
@@ -847,7 +847,7 @@ and	O
 tickets	O
 cost	O
 20	B-Prices
-dollars.	B-Currency
+dollars.	I-Prices
 
 The	O
 box	O
@@ -885,10 +885,10 @@ total	O
 bill	O
 was	O
 45	B-Prices
-euros,	B-Currency
+euros,	I-Prices
 including	O
 a	O
-10-euro	I-Currency
+10-euro	B-Prices
 service	O
 charge.	O
 
@@ -1044,16 +1044,16 @@ and	O
 will	O
 last	O
 for	O
-3	B-Times
-hours.	I-Times
+3	B-Quantity
+hours.	B-Units
 
 He	O
 ran	O
 8	B-Quantity
 kilometers	B-Units
 in	O
-40	B-Times
-minutes,	I-Times
+40	B-Quantity
+minutes,	B-Units
 with	O
 an	O
 average	O
@@ -1068,14 +1068,14 @@ The	O
 furniture	O
 costs	O
 300	B-Prices
-euros,	B-Currency
+euros,	I-Prices
 and	O
 the	O
 delivery	O
 charge	O
 is	O
 20	B-Prices
-euros.	B-Currency
+euros.	I-Prices
 
 She	O
 purchased	O
@@ -1084,12 +1084,12 @@ gold	B-Colors
 necklace	O
 for	O
 200	B-Prices
-dollars	B-Currency
+dollars	I-Prices
 and	O
 earrings	O
 for	O
 50	B-Prices
-dollars.	B-Currency
+dollars.	I-Prices
 
 The	O
 train	O
@@ -1101,11 +1101,11 @@ and	O
 the	O
 journey	O
 takes	O
-2	B-Times
-hours	I-Times
-and	I-Times
-15	I-Times
-minutes.	I-Times
+2	B-Quantity
+hours	B-Units
+and	O
+15	B-Quantity
+minutes.	B-Units
 
 The	O
 phone,	O
@@ -1204,7 +1204,7 @@ course	O
 fee	O
 is	O
 500	B-Prices
-dollars,	B-Currency
+dollars,	I-Prices
 and	O
 the	O
 course	O
@@ -1255,18 +1255,18 @@ the	O
 ticket	O
 costs	O
 600	B-Prices
-dollars.	B-Currency
+dollars.	I-Prices
 
 She	O
 paid	O
 100	B-Prices
-dollars	B-Currency
+dollars	I-Prices
 for	O
 the	O
 dress	O
 and	O
 50	B-Prices
-dollars	B-Currency
+dollars	I-Prices
 for	O
 the	O
 shoes.	O
@@ -1301,7 +1301,7 @@ and	O
 tickets	O
 are	O
 35	B-Prices
-dollars	B-Currency
+dollars	I-Prices
 each.	O
 
 The	O
@@ -1398,7 +1398,7 @@ the	O
 house	O
 is	O
 1,500	B-Prices
-dollars	B-Currency
+dollars	I-Prices
 per	O
 month,	O
 and	O
@@ -1406,7 +1406,7 @@ the	O
 deposit	O
 is	O
 3,000	B-Prices
-dollars.	B-Currency
+dollars.	I-Prices
 
 She	O
 is	O
@@ -1433,13 +1433,13 @@ old.	I-Age
 الدخول	O
 هي	O
 150	B-Prices
-دولارًا.	B-Currency
+دولارًا.	I-Prices
 
 اشترت	O
 5	B-Quantity
 تفاحات	O
 حمراء	B-Colors
-و2	O
+و2	B-Quantity
 كيلوجرام	B-Units
 من	O
 الدقيق	O
@@ -1454,7 +1454,7 @@ old.	I-Age
 1200	B-Prices
 يورو	I-Prices
 في	O
-الشهر.	B-Units
+الشهر.	O
 
 مشوا	O
 12	B-Quantity
@@ -1462,8 +1462,8 @@ old.	I-Age
 عبر	O
 الغابة	O
 في	O
-6	B-Times
-ساعات.	I-Times
+6	B-Quantity
+ساعات.	B-Units
 
 الطرد	O
 الذي	O
@@ -1509,8 +1509,8 @@ old.	I-Age
 من	O
 البيض	O
 مقابل	O
-15	O
-يورو.	B-Currency
+15	B-Prices
+يورو.	I-Prices
 
 المشروع،	O
 المقرر	O
@@ -1518,23 +1518,23 @@ old.	I-Age
 5	I-Dates
 أيام،	I-Dates
 يتطلب	O
-10	B-Times
-ساعات	I-Times
+10	B-Quantity
+ساعات	B-Units
 من	O
 العمل	O
 وميزانية	O
 قدرها	O
 500	B-Prices
-دولار.	B-Currency
+دولار.	I-Prices
 
 أنفق	O
 70	B-Prices
-دولارًا	B-Currency
+دولارًا	I-Prices
 على	O
 سترة	O
 زرقاء	B-Colors
-و40	O
-دولارًا	B-Currency
+و40	B-Prices
+دولارًا	I-Prices
 على	O
 زوج	O
 من	O
@@ -1547,7 +1547,7 @@ old.	I-Age
 كيلوجرام	B-Units
 وتكلفته	O
 25	B-Prices
-جنيهًا.	B-Currency
+جنيهًا.	I-Prices
 
 عمرها	O
 30	B-Age
@@ -1574,11 +1574,11 @@ old.	I-Age
 3	B-Quantity
 كرات	O
 حمراء	B-Colors
-و2	O
+و2	B-Quantity
 كرات	O
 زرقاء	B-Colors
 ويزن	O
-500	O
+500	B-Quantity
 جرام.	B-Units
 
 درجة	O
@@ -1612,19 +1612,19 @@ old.	I-Age
 المتوفرة	O
 باللونين	O
 الأحمر	B-Colors
-والأسود،	O
+والأسود،	B-Colors
 تكلف	O
 20000	B-Prices
 دولار.	I-Prices
 
 دفع	O
-25	B-Quantity
-جنيهًا	B-Currency
+25	B-Prices
+جنيهًا	I-Prices
 مقابل	O
 3	B-Quantity
-كتب،	I-Quantity
+كتب،	O
 كل	O
-كتاب	B-Units
+كتاب	O
 يزن	O
 300	B-Quantity
 جرام.	B-Units
@@ -1640,7 +1640,7 @@ old.	I-Age
 سبتمبر	I-Dates
 وسيستمر	O
 لمدة	O
-ساعتين.	B-Units
+ساعتين.	O
 
 تحتاج	O
 إلى	O
@@ -1648,7 +1648,7 @@ old.	I-Age
 مليلتر	B-Units
 من	O
 الكريمة	O
-و100	O
+و100	B-Quantity
 جرام	B-Units
 من	O
 السكر	O
@@ -1673,18 +1673,18 @@ old.	I-Age
 اشترى	O
 3	B-Quantity
 قمصان	O
-و2	O
+و2	B-Quantity
 بناطيل	O
 وسترة	O
 مقابل	O
-150	B-Currency
-دولارًا.	I-Currency
+150	B-Prices
+دولارًا.	I-Prices
 
 تغادر	O
 الرحلة	O
 الساعة	O
-11:45	O
-مساءً	O
+11:45	B-Times
+مساءً	I-Times
 وستصل	O
 في	O
 الساعة	O
@@ -1709,13 +1709,13 @@ old.	I-Age
 لتر	B-Units
 من	O
 الزيت،	O
-و500	O
+و500	B-Quantity
 جرام	B-Units
 من	O
 التوابل	O
 مقابل	O
-25	B-Currency
-دولارًا.	I-Currency
+25	B-Prices
+دولارًا.	I-Prices
 
 الامتحان	O
 في	O
@@ -1733,35 +1733,35 @@ old.	I-Age
 8	B-Quantity
 كيلومترات	B-Units
 في	O
-40	B-Times
-دقيقة،	I-Times
+40	B-Quantity
+دقيقة،	B-Units
 بسرعة	O
 متوسطة	O
 تبلغ	O
 12	B-Quantity
 كيلومترًا	B-Units
-في	B-Times
-الساعة.	I-Times
+في	O
+الساعة.	O
 
 تكلفة	O
 الأثاث	O
 300	B-Prices
-يورو،	B-Currency
+يورو،	I-Prices
 ورسوم	O
 التوصيل	O
 20	B-Prices
-يورو.	B-Currency
+يورو.	I-Prices
 
 اشترت	O
 قلادة	O
 ذهبية	B-Colors
 مقابل	O
 200	B-Prices
-دولار	B-Currency
+دولار	I-Prices
 وأقراط	O
 مقابل	O
 50	B-Prices
-دولارًا.	B-Currency
+دولارًا.	I-Prices
 
 تغادر	O
 القطار	O
@@ -1770,31 +1770,31 @@ old.	I-Age
 صباحًا،	I-Times
 وتستغرق	O
 الرحلة	O
-ساعتين	B-Times
-و15	I-Times
-دقيقة.	I-Times
+ساعتين	O
+و15	B-Quantity
+دقيقة.	B-Units
 
 الهاتف	O
 الذي	O
 يكلف	O
 800	B-Prices
-دولار	I-Currency
+دولار	I-Prices
 يزن	O
-200	B-Units
-جرام	I-Units
+200	B-Quantity
+جرام	B-Units
 وله	O
 شاشة	O
 بحجم	O
-6	B-Units
-بوصات.	I-Units
+6	B-Quantity
+بوصات.	B-Units
 
 الحدث	O
 في	O
 25	B-Dates
 يوليو	I-Dates
 الساعة	O
-6:00	O
-مساءً،	O
+6:00	B-Times
+مساءً،	I-Times
 وزي	O
 الملابس	O
 المطلوب	O
@@ -1809,7 +1809,7 @@ old.	I-Age
 من	O
 حبوب	O
 القهوة	O
-و500	O
+و500	B-Quantity
 مليلتر	B-Units
 من	O
 الماء	O
@@ -1823,12 +1823,12 @@ old.	I-Age
 يبدأ	O
 في	O
 الساعة	O
-8:00	O
-مساءً،	O
+8:00	B-Times
+مساءً،	I-Times
 مدة	O
 عرضه	O
-ساعتين	B-Units
-ونصف.	I-Units
+ساعتين	O
+ونصف.	O
 
 الحقيبة	O
 تزن	O
@@ -1836,7 +1836,7 @@ old.	I-Age
 كيلوجرام	B-Units
 وتكلف	O
 75	B-Prices
-يورو.	B-Currency
+يورو.	I-Prices
 
 عمرها	O
 32	B-Age
@@ -1849,22 +1849,22 @@ old.	I-Age
 رسوم	O
 الدورة	O
 التدريبية	O
-500	B-Currency
-دولار،	I-Currency
+500	B-Prices
+دولار،	I-Prices
 ومدة	O
 الدورة	O
 6	B-Quantity
-أسابيع.	I-Quantity
+أسابيع.	B-Units
 
 اشترى	O
 2	B-Quantity
 كيلوجرام	B-Units
 من	O
 اللحم	O
-و3	O
+و3	B-Quantity
 كيلوجرامات	B-Units
 من	O
 الخضروات	O
 مقابل	O
 30	B-Prices
-دولارًا.	B-Currency
+دولارًا.	I-Prices
