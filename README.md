@@ -27,21 +27,31 @@ Existing NER models, such as [marefa-nlp/marefa-ner](https://huggingface.co/mare
 - Added Regex Parsers for easily parsable entities like Colors.
 - Created the API and Dockerfile.
 
+### Day 3
+
+- Annotated the automatically annotated examples mentioend above, revised the manual annotations. Resulting in an F-Score increase of ~0.15
+- Used manually annotated data.txt file as an example for Gemini 1.5 Pro to generate sythetic annotated data (~ extra samples 300)
+- Trained on the synthetic data, and evaluated on the manual data, result was 0.8 Weighted F1-Score. This confirmed that the synthetic data was useful.
+- Combined the manually annotated data with the synthetic data, and trained on the combined data. The result was 0.95 Weighted F1-Score on the eval split of the combined data.
+- Despite high weighted F1-Score model had perormaed poorly on specific entities which were not well present in the data, such as Age, and Currency. Attempted to generate more synthetic data for these entities, Macro F1-Score increased from 0.74 to 0.8
+- Bug Fixes, Response Schema Unification.
+
 ## Limitations & Future Work
 
-1. **Collected Data**: The dataset is small (~190 samples) and lacks diversity. About 60% of the data was annotated automatically using GPT-4. For production use, more time should be invested in data collection and annotation.
+1. **Collected Data**: Testing needs to be done to ensure that the synthetic data is sufficient and will generalize to real-world data.
 
 2. **Regex Parsers**: Regex parsers are effective for Colors and Units but may not be ideal for Dates, Times, Prices, Currency, Age, and Quantity.
 
 3. **Entity Detection Selection**: The API currently provides three separate outputs from different approaches. There is no logic to merge these outputs into a final result. This requires a testing dataset to determine the best merging strategy.
 
-## Installation and Usage
+## Usage
 
 ### Inference
 
-1. Build the Dockerfile.
-2. Run the container.
-3. Check `examples.ipynb` for examples on how to use the API.
+1. Download Model state from https://drive.google.com/drive/u/0/folders/1erHkR3eRgE5KxvmeiygdJZP0Sv48-6AG and extract it in the models/ directory.
+2. Build the Dockerfile.
+3. Run the container.
+4. Check `examples.ipynb` for examples on how to use the API.
 
 
 ### Training
