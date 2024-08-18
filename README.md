@@ -9,6 +9,10 @@ The goal is to capture the following entities in both Arabic and English languag
 
 Existing NER models, such as [marefa-nlp/marefa-ner](https://huggingface.co/marefa-nlp/marefa-ner) (1) and [hatmimoha/arabic-ner](https://huggingface.co/hatmimoha/arabic-ner) (2), do not capture all the required entities. Additionally, the data they were trained on is unavailable, making fine-tuning challenging.
 
+Finally the output entities that will be returned by the endpoint will also include the entities captured by model (1) which are :
+
+- Person, Location, Organization, Nationality, Job, Product, Event, Time, Art-Work
+
 ## Approach
 
 ### Day 1
@@ -50,9 +54,11 @@ Existing NER models, such as [marefa-nlp/marefa-ner](https://huggingface.co/mare
 
 1. Download Model state from https://drive.google.com/drive/u/0/folders/1erHkR3eRgE5KxvmeiygdJZP0Sv48-6AG and extract it in the models/ directory.
 2. Build the Dockerfile.
+   steps : 
+   docker build -t karen-ner .
+   docker run -p 8000:8000 karen-ner
 3. Run the container.
 4. Check `examples.ipynb` for examples on how to use the API.
-
 
 ### Training
 
