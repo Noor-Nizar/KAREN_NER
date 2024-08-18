@@ -1,4 +1,4 @@
-# AR/EN NER Challenge
+# KAREN NER - Keemet AI AR/EN NER Challenge
 
 This challenge was part of my internship at KeemetAI. The project description can be found in the PDF file located in the root directory.
 
