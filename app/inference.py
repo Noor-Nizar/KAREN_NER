@@ -44,7 +44,7 @@ def predict(texts : List, model, tokenizer, batch_size=8, max_len=64) -> tuple:
 
     return predictions, probs
 
-def extract_entities_from_texts(texts : List, tokenized_inputs : dict, predictions_decoded : List) -> List:
+def extract_entities_from_texts(texts : List, tokenized_inputs : List, predictions_decoded : List) -> List:
     ''' maps the prediction from token level to character level, groups the same entities and returns the expected dictionary'''
     entity_list = []
 
@@ -102,20 +102,21 @@ def extract_entities_from_texts(texts : List, tokenized_inputs : dict, predictio
 
     return entity_list
 
+
 def infer_model(texts: List, model, tokenizer, custom_labels : dict, max_length=64):
     ''' Returns the entities for the given texts '''
     predictions, probs = predict(texts, model, tokenizer) # TODO: Handle probs
-    tokenized_input = tokenizer(texts, 
+    tokenized_input = [tokenizer(text, 
                             is_split_into_words=False, 
                             padding='max_length', 
                             max_length=64, 
                             truncation=True,
                             return_tensors='pt',
-                            return_offsets_mapping=True)
+                            return_offsets_mapping=True) for text in texts]
     
     predictions_decoded = [[custom_labels.get(pred, "O") for pred in prediction] for prediction in predictions]
 
-    entities = extract_entities_from_texts(texts, [tokenized_input], predictions_decoded)
+    entities = extract_entities_from_texts(texts, tokenized_input, predictions_decoded)
     return entities
 
 def infer(texts, model_main, tokenizer_main, model_tuned, tokenizer_tuned, max_length=64):
