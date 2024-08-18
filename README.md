@@ -56,7 +56,7 @@ Finally the output entities that will be returned by the endpoint will also incl
 2. Build the Dockerfile.
    steps : 
    docker build -t karen-ner .
-   docker run -p 8000:8000 karen-ner
+   docker run -p 8008:8008 karen-ner
 3. Run the container.
 4. Check `examples.ipynb` for examples on how to use the API.
 
