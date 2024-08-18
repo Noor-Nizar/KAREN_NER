@@ -22,7 +22,7 @@ class PredictionRequest(BaseModel):
 
 class PredictionResponse(BaseModel):
     """Response body for the /predict endpoint."""
-    predictions: Dict[str, Dict[str, List]] = Field(..., description="Dictionary of predictions")
+    predictions: List[List[Dict]] = Field(..., description="List containing a Lists of predictions for each text, one prediction is a dictionary containing the entity, start_idx, end_idx, and label")
 
 
 # --- API Endpoints ---
