@@ -7,16 +7,15 @@ from app.data.lbox_handler import process_labelbox_data
 from app.data.data_helpers import load_data, tokenize_and_align_labels, create_label_mappings, convert_labels_to_ids
 from app.datasets import TokenizedDataset
 from app.training.training_helpers import compute_metrics, compute_metrics_2
+from app.inference import get_labels_tuned
+from app.models import get_tuning_tokenizer
 
-
-def prepare_data(tokenizer, re_process=False, train_size=128):
-    if re_process:
-        process_labelbox_data()
-
-    X, y = load_data('data/processed.txt')
+def prepare_data(tokenizer, file_name, train_size=1):
+    X, y = load_data(f'data/{file_name}')
     X, y = shuffle(X, y, random_state=42)
 
-    label_to_id, id_to_label = create_label_mappings(y)
+    id_to_label = get_labels_tuned()
+    label_to_id = {label: i for i, label in id_to_label.items()}
 
     X_train, y_train = X[:train_size], y[:train_size]
     X_test, y_test = X[train_size:], y[train_size:]
@@ -30,6 +29,7 @@ def prepare_data(tokenizer, re_process=False, train_size=128):
     train_dataset = TokenizedDataset(X_train_tokenized, y_train_ids)
     test_dataset = TokenizedDataset(X_test_tokenized, y_test_ids)
 
+    ## remove label_to_id and id_to_label from the returns
     return train_dataset, test_dataset, label_to_id, id_to_label
 
 def get_trainer(model, train_dataset, test_dataset, cuda=True, batch_size=16, compute_metrics=compute_metrics):
@@ -43,7 +43,6 @@ def get_trainer(model, train_dataset, test_dataset, cuda=True, batch_size=16, co
         per_device_train_batch_size=batch_size,
         per_device_eval_batch_size=batch_size,
         num_train_epochs=50,
-        weight_decay=0.01,
         logging_steps=10,
         eval_steps=10,
         logging_dir='./logs',
@@ -70,8 +69,8 @@ def train_model(model, train_dataset, test_dataset):
 
     return trainer.model
 
-def prepare_and_train_model(model, re_process=False, train_size=128):
-    train_dataset, test_dataset, label_to_id, id_to_label = prepare_data(re_process, train_size)
+def prepare_and_train_model(model, file_name, train_size=128):
+    train_dataset, test_dataset, label_to_id, id_to_label = prepare_data(get_tuning_tokenizer(),file_name, train_size)
     trained_model = train_model(model, train_dataset, test_dataset)
 
     return trained_model, label_to_id, id_to_label

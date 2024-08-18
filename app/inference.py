@@ -8,7 +8,7 @@ from app.regex_finders import regex_ner
 
 def get_labels_tuned() -> dict:
     # FIXME : update this automatically
-    return {0: 'B-Age', 1: 'B-Colors', 2: 'B-Currency', 3: 'B-Dates', 4: 'B-Prices', 5: 'B-Quantity', 6: 'B-Times', 7: 'B-Units', 8: 'I-Age', 9: 'I-Currency', 10: 'I-Dates', 11: 'I-Prices', 12: 'I-Quantity', 13: 'I-Times', 14: 'I-Units', 15: 'O'}
+    return {0: 'B-Age', 1: 'B-Colors', 2: 'B-Currency', 3: 'B-Dates', 4: 'B-Prices', 5: 'B-Quantity', 6: 'B-Times', 7: 'B-Units', 8: 'I-Age', 9: 'I-Colors', 10: 'I-Currency', 11: 'I-Dates', 12: 'I-Prices', 13: 'I-Quantity', 14: 'I-Times', 15: 'I-Units', 16: 'O'}
 
 def get_labels_main() -> dict:
     ''' Returns the labels for inference '''

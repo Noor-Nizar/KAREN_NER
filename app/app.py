@@ -12,7 +12,7 @@ from app.inference import infer
 model_main = get_model()
 tokenizer_main = get_tokenizer()
 
-model_tuned = get_tuning_model(path = "models/checkpoint-248")
+model_tuned = get_tuning_model(path = "models/checkpoint-253-aug")
 tokenizer_tuned = get_tuning_tokenizer()
 
 # --- Pydantic Schemas for Request/Response Validation ---

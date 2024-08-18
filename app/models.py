@@ -12,9 +12,10 @@ def get_tuning_model(freeze_layers: int = 6, path: str = None):
     # Load the model and tokenizer
     model = AutoModelForTokenClassification.from_pretrained(model_name)
 
-    # Freeze the first 6 layers
-    for param in model.bert.encoder.layer[:freeze_layers].parameters():
-        param.requires_grad = False
+    # commented because based on last experiments its better to train the whole model
+    # # Freeze the first 6 layers
+    # for param in model.bert.encoder.layer[:freeze_layers].parameters():
+    #     param.requires_grad = False
     
     return model
 
